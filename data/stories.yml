@@ -1,0 +1,77 @@
+version: "2.0"
+
+stories:
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: Book path 1
+  steps:
+  - intent: Step1
+  - action: utter_Step1
+  - intent: Step2
+  - action: utter_Step2 
+  - intent: AC
+  - action: utter_AC
+  - intent: Step3
+  - action: utter_Step3
+
+- story: Book path 2
+  steps:
+  - intent: Stepita
+  - action: utter_Step2 
+  - intent: Non-AC
+  - action: utter_Non-AC
+  - intent: Step3
+  - action: utter_Mistakes
+  - action: utter_Non-AC
+  - intent: Valid
+  - action: utter_Valid
+
+
+- story: FAQ path 
+  steps:
+  - intent: Timing
+  - action: utter_Timing
+  - intent: Open
+  - action: utter_Open
+  - intent: Cancel
+  - action: utter_Cancel
+  - intent: Specials
+  - action: utter_Specials
+  
+  
+- story: Bonus path
+  steps:
+  - intent: Stepita
+  - action: utter_Step2 
+  - intent: AC
+  - action: utter_AC
+  - intent: Open
+  - action: utter_Open
+  - action: utter_AC
+  - intent: Valid
+  - action: utter_Validate
